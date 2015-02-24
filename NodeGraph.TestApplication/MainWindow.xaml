@@ -1,0 +1,9 @@
+﻿<Window x:Class="NodeGraph.TestApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:nodeGraphControl="clr-namespace:NodeGraphControl;assembly=NodeGraphControl"
+        Title="NodeGraphControl Test Application" Height="350" Width="525">
+    <Grid>
+        <nodeGraphControl:NodeGraph Name="nodeGraph" />
+    </Grid>
+</Window>
