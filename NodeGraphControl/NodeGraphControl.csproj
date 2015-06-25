@@ -47,10 +47,15 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\NodeConnectionViewModel.cs" />
+    <Compile Include="Model\NodeConnectorViewModel.cs" />
+    <Compile Include="Utils\AbstractModelBase.cs" />
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Model\NodeGraphViewModel.cs" />
+    <Compile Include="Model\NodeViewModel.cs" />
     <Compile Include="NodeGraph.cs">
       <SubType>Code</SubType>
     </Compile>

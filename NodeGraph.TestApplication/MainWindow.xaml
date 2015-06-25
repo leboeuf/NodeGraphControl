@@ -4,6 +4,6 @@
         xmlns:nodeGraphControl="clr-namespace:NodeGraphControl;assembly=NodeGraphControl"
         Title="NodeGraphControl Test Application" Height="350" Width="525">
     <Grid>
-        <nodeGraphControl:NodeGraph Name="nodeGraph" />
+        <nodeGraphControl:NodeGraph Name="nodeGraph" NodesSource="{Binding SampleData.Nodes}" />
     </Grid>
 </Window>
