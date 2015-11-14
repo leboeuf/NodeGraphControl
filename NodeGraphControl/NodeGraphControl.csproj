@@ -47,6 +47,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\NodeControl.cs" />
     <Compile Include="Model\Enums\ConnectorType.cs" />
     <Compile Include="Model\NodeConnectionViewModel.cs" />
     <Compile Include="Model\NodeConnectorViewModel.cs" />

@@ -7,28 +7,30 @@ namespace NodeGraph.TestApplication
     public class MainWindowViewModel : AbstractModelBase
     {
         /// <summary>
-        /// This is the network that is displayed in the window.
+        /// This is the Graph that is displayed in the window.
         /// It is the main part of the view-model.
         /// </summary>
-        private NodeGraphViewModel network = null;
+        private NodeGraphViewModel graph = null;
 
-        public NodeGraphViewModel Network
+        public NodeGraphViewModel Graph
         {
             get
             {
-                return network;
+                return graph;
             }
             set
             {
-                network = value;
+                graph = value;
 
-                OnPropertyChanged("Network");
+                OnPropertyChanged("Graph");
             }
         }
 
         public MainWindowViewModel()
         {
             // test data
+            Graph = new NodeGraphViewModel();
+
             var name = "Test node";
             var nodeLocation = new Point(100, 100);
             var node = new NodeViewModel(name);
@@ -40,8 +42,7 @@ namespace NodeGraph.TestApplication
             node.OutputConnectors.Add(new NodeConnectorViewModel("Out1"));
             node.OutputConnectors.Add(new NodeConnectorViewModel("Out2"));
 
-            Network.Nodes.Add(node);
-
+            Graph.Nodes.Add(node);
         }
     }
 }

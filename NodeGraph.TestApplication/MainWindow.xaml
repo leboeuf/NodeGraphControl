@@ -1,9 +1,32 @@
 ﻿<Window x:Class="NodeGraph.TestApplication.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:NodeGraph.TestApplication"
         xmlns:nodeGraphControl="clr-namespace:NodeGraphControl;assembly=NodeGraphControl"
+        xmlns:model="clr-namespace:NodeGraphControl.Model;assembly=NodeGraphControl"
+        xmlns:controls="clr-namespace:NodeGraphControl.Controls;assembly=NodeGraphControl"
         Title="NodeGraphControl Test Application" Height="350" Width="525">
-    <Grid>
-        <nodeGraphControl:NodeGraph Name="nodeGraph" NodesSource="{Binding SampleData.Nodes}" />
-    </Grid>
+    
+    <Window.Resources>
+        <Style TargetType="{x:Type controls:NodeControl}">
+            <Setter Property="X" Value="{Binding X}" />
+            <Setter Property="Y" Value="{Binding Y}" />
+            <Setter Property="IsSelected" Value="{Binding IsSelected}" />
+        </Style>
+        
+        <DataTemplate DataType="{x:Type model:NodeViewModel}">
+            <Grid Width="120" Height="60">
+                <Rectangle Stroke="Black" Fill="Gray" RadiusX="4" RadiusY="4" />
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+
+    <nodeGraphControl:NodeGraph x:Name="nodeGraph" NodesSource="{Binding Graph.Nodes}" />
+    <!--<ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" Focusable="False">
+        <nodeGraphControl:NodeGraph Name="nodeGraph" NodesSource="{Binding Graph.Nodes}" />
+    </ScrollViewer>-->
 </Window>
