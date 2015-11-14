@@ -1,4 +1,5 @@
-﻿using NodeGraphControl.Model;
+﻿using System.Windows;
+using NodeGraphControl.Model;
 using NodeGraphControl.Utils;
 
 namespace NodeGraph.TestApplication
@@ -9,20 +10,38 @@ namespace NodeGraph.TestApplication
         /// This is the network that is displayed in the window.
         /// It is the main part of the view-model.
         /// </summary>
-        private NodeGraphViewModel nodes = null;
+        private NodeGraphViewModel network = null;
 
-        public NodeGraphViewModel Nodes
+        public NodeGraphViewModel Network
         {
             get
             {
-                return nodes;
+                return network;
             }
             set
             {
-                nodes = value;
+                network = value;
 
-                OnPropertyChanged("Nodes");
+                OnPropertyChanged("Network");
             }
+        }
+
+        public MainWindowViewModel()
+        {
+            // test data
+            var name = "Test node";
+            var nodeLocation = new Point(100, 100);
+            var node = new NodeViewModel(name);
+            node.X = nodeLocation.X;
+            node.Y = nodeLocation.Y;
+
+            node.InputConnectors.Add(new NodeConnectorViewModel("In1"));
+            node.InputConnectors.Add(new NodeConnectorViewModel("In2"));
+            node.OutputConnectors.Add(new NodeConnectorViewModel("Out1"));
+            node.OutputConnectors.Add(new NodeConnectorViewModel("Out2"));
+
+            Network.Nodes.Add(node);
+
         }
     }
 }
