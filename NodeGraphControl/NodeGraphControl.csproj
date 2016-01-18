@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Controls\NodeControl.cs" />
     <Compile Include="Model\Enums\ConnectorType.cs" />
+    <Compile Include="Model\Enums\NodeType.cs" />
     <Compile Include="Model\NodeConnectionViewModel.cs" />
     <Compile Include="Model\NodeConnectorViewModel.cs" />
     <Compile Include="Utils\AbstractModelBase.cs" />
