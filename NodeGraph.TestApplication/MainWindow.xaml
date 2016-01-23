@@ -16,7 +16,9 @@
         
         <DataTemplate DataType="{x:Type model:NodeViewModel}">
             <Grid Width="120" Height="60">
-                <Rectangle Stroke="Black" Fill="Gray" RadiusX="4" RadiusY="4" />
+                <Border BorderBrush="Black" BorderThickness="1" Background="Gray" CornerRadius="4">
+                    <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                </Border>
             </Grid>
         </DataTemplate>
     </Window.Resources>
